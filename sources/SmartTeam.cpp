@@ -102,7 +102,7 @@ std::vector<Ninja *> SmartTeam::closestNinjaOrder(Character *enemy) const {
     for (Character *character: this->getArr()) {
         if ((dynamic_cast<Ninja *>(character) != nullptr) && (character->isAlive())) {
             ninja = dynamic_cast<Ninja *>(character);
-            if (ninja->distance(enemy) < ninja->getSpeed()) {
+            if (ninja->distance(enemy) < 1) {
                 ninjas.push_back(ninja);
             } else {
                 ninjasEnd.push_back(ninja);
