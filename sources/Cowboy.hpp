@@ -8,12 +8,16 @@ namespace ariel {
     private:
         int bulletCount;
     public:
-//        Cowboy();
         Cowboy(std::string name, Point location);
+
         std::string print() const override;
+
         void shoot(Character *enemy);
+
         bool hasboolets();
+
         void reload();
+
         int getAmmo() const;
     };
 }

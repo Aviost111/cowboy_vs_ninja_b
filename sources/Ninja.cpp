@@ -1,29 +1,33 @@
 #include "Ninja.hpp"
 #include <stdexcept>
+
 using namespace std;
-namespace ariel{
+namespace ariel {
 
     Ninja::Ninja(string name, Point location) : Character(name, location) {
-        //problem?
-        this->speed=10;
+        //initialize speed so it's not garbage
+        this->speed = 10;
     }
 
 
     void Ninja::move(Character *enemy) {
-        this->setLocation(this->getLocation().moveTowards(this->getLocation(),enemy->getLocation(), this->speed));
+        //set location using the result of your location move towards enemys location at your speed
+        this->setLocation(this->getLocation().moveTowards(this->getLocation(), enemy->getLocation(), this->speed));
     }
 
     void Ninja::slash(Character *enemy) {
-        if(!enemy->isAlive()){
+        //check that you and the enemy are alive and that you arent attacking yourself
+        if (!enemy->isAlive()) {
             throw runtime_error("The enemy is already dead");
         }
-        if(!this->isAlive()){
+        if (!this->isAlive()) {
             throw runtime_error("You are dead");
         }
-        if(this==enemy){
+        if (this == enemy) {
             throw runtime_error("No self harm");
         }
-        if(this->distance(enemy)<1){
+        //if you're close enough hit the enemy fo 40
+        if (this->distance(enemy) < 1) {
             enemy->hit(40);
         }
     }
@@ -37,11 +41,13 @@ namespace ariel{
     }
 
     string Ninja::print() const {
-        if(this->isAlive()) {
-            return "N "+this->getName() + ": hp-" + to_string(this->getHitPoints()) + ", location-" +
+        //if the ninja is alive print N, name , hp and location
+        if (this->isAlive()) {
+            return "N " + this->getName() + ": hp-" + to_string(this->getHitPoints()) + ", location-" +
                    this->getLocation().print();
         }
-        return "N ("+this->getName()+")"+": location-" +
+        //else print N, name and location
+        return "N (" + this->getName() + ")" + ": location-" +
                this->getLocation().print();
     }
 }

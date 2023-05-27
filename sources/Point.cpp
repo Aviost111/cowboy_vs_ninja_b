@@ -8,6 +8,7 @@ using namespace ariel;
 Point::Point(double pointX, double pointY) : pointX(pointX), pointY(pointY) {
 }
 
+//make empty point (0,0)
 Point::Point() : pointY(0), pointX(0) {
 
 }
@@ -34,7 +35,7 @@ Point Point::moveTowards(Point src, Point dst, double distance) {
     double newX = src.pointX + (dx * ratio);
     double newY = src.pointY + (dy * ratio);
     // Create a new Point object with the calculated coordinates and return it
-    return {newX,newY};
+    return {newX, newY};
 }
 
 string Point::print() {
@@ -49,6 +50,7 @@ double Point::getX() const {
     return this->pointX;
 }
 
+//distance between two points
 double Point::distance(Point point) const {
     double dx = point.getX() - pointX;
     double dy = point.getY() - pointY;

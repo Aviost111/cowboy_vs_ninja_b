@@ -1,5 +1,6 @@
 #ifndef COWBOY_VS_NINJA_A_POINT_HPP
 #define COWBOY_VS_NINJA_A_POINT_HPP
+
 #include <string>
 
 namespace ariel {

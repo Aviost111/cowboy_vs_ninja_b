@@ -17,16 +17,17 @@ namespace ariel {
 
         void setInTeam();
 
-        Character(const std::string& name,Point location);
+        Character(const std::string &name, Point location);
 
-        Character();
+        virtual ~Character() = default;
 
-        virtual ~Character()=default;
+        Character(const Character &) = delete;
 
-        Character(const Character&) = delete;
-        Character& operator=(const Character&) = delete;
-        Character(Character&&) = delete;
-        Character& operator=(Character&&) = delete;
+        Character &operator=(const Character &) = delete;
+
+        Character(Character &&) = delete;
+
+        Character &operator=(Character &&) = delete;
 
         bool isAlive() const;
 

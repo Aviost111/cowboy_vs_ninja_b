@@ -15,8 +15,6 @@ namespace ariel {
         std::vector<Ninja*> closestNinjaOrder(Character* enemy) const;
 
         int numOfCowboys() const;
-
-//        Character* closestToNinjas(Team* enemyTeam) ;
     };
 }
 
