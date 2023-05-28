@@ -201,7 +201,7 @@ namespace ariel {
             }
             if (dynamic_cast<YoungNinja *>(character) != nullptr) {
                 YN =dynamic_cast<YoungNinja *>(character);
-                YN->setHitPoints(100)
+                YN->setHitPoints(100);
             }
             if (dynamic_cast<TrainedNinja *>(character) != nullptr) {
                 TN = dynamic_cast<TrainedNinja *>(character);

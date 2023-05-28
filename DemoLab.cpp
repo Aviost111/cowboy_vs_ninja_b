@@ -14,15 +14,16 @@ int main() {
     Cowboy cowboy1("John", Point(0, 0));
     Cowboy cowboy2("Tom", Point(2, 2));
     Cowboy cowboy3("Mike", Point(5, 5));
-    OldNinja ONinja1("Hanzo", Point(4, 4));
-    OldNinja ONinja2("Hanzo", Point(4, 4));
-    OldNinja ONinja3("Hanzo", Point(4, 4));
-    YoungNinja YNinja1("Hanzo", Point(4, 4));
-    YoungNinja YNinja2("Hanzo", Point(4, 4));
-    YoungNinja YNinja3("Hanzo", Point(4, 4));
-    TrainedNinja TNinja1("Hanzo2", Point(6, 2));
-    TrainedNinja TNinja2("Hanzo2", Point(6, 2));
-    TrainedNinja TNinja3("Hanzo2", Point(6, 2));
+    OldNinja ONinja1("Hanzo 1", Point(3, 5));
+    OldNinja ONinja2("Hanzo 2", Point(1, 7));
+    OldNinja ONinja3("Hanzo 3", Point(2, 7));
+    YoungNinja YNinja1("mickey 1", Point(4, 4));
+    YoungNinja YNinja2("mickey 2", Point(7, 4));
+    YoungNinja YNinja3("mickey 3", Point(4, 4));
+    TrainedNinja TNinja1("ron 1", Point(6, 2));
+    TrainedNinja TNinja2("ron 2", Point(15, 2));
+    TrainedNinja TNinja3("ron 3", Point(6, 99));
+
 
     // Create teams
     Team team1(&cowboy1);
@@ -41,6 +42,9 @@ int main() {
     smartTeam.addCharacter(&ONinja3);
     smartTeam.addCharacter(&TNinja3);
     smartTeam.addCharacter(&cowboy3);
+
+    cout<<YNinja1<<endl;
+    YNinja2
 
     // Print initial team information
     cout << "Team 1:" << endl;
