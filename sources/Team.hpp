@@ -45,6 +45,8 @@ namespace ariel {
         Team(Team&&) = delete;
         Team& operator=(Team&&) = delete;
         std::vector<Character*> sortCowboyFirst() const;
+
+        void restart();
     };
 
 }

@@ -182,5 +182,31 @@ namespace ariel {
         }
         return tmpLeader;
     }
-
+    //restart the team to be alive
+    void Team::restart() {
+        Cowboy *cowboy;
+        OldNinja * ON;
+        TrainedNinja* TN;
+        YoungNinja *YN;
+        //go over the whole team and set hp and bullets to initial values
+        for(Character* character: this->team){
+            if (dynamic_cast<Cowboy *>(character) != nullptr) {
+                cowboy=dynamic_cast<Cowboy *>(character);
+                cowboy->setHitPoints(110);
+                cowboy->reload();
+            }
+            if (dynamic_cast<OldNinja *>(character) != nullptr) {
+                ON = dynamic_cast<OldNinja *>(character);
+                ON->setHitPoints(150);
+            }
+            if (dynamic_cast<YoungNinja *>(character) != nullptr) {
+                YN =dynamic_cast<YoungNinja *>(character);
+                YN->setHitPoints(100)
+            }
+            if (dynamic_cast<TrainedNinja *>(character) != nullptr) {
+                TN = dynamic_cast<TrainedNinja *>(character);
+                TN->setHitPoints(120);
+            }
+        }
+    }
 }
